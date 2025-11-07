@@ -25,7 +25,7 @@ const peliculas = [
   { label: 'El Grinch', value: 'El Grinch' }
 ];
 
-function ComprarEntrada({ setEntradas }) {
+function ComprarEntrada({ onRegistrarEntrada }) {
   const [form, setForm] = useState({
     dia: null,
     tipoPago: null,
@@ -54,10 +54,8 @@ function ComprarEntrada({ setEntradas }) {
   const manejarEnvio = (e) => {
     e.preventDefault();
     if (validar()) {
-      setEntradas(prev => [
-        ...prev,
-        { ...form }
-      ]);
+    
+      onRegistrarEntrada({ ...form });
       toast.current.show({ severity: 'success', summary: 'Entrada registrada correctamente', life: 2500 });
       setForm({ dia: null, tipoPago: null, cantidad: null, ciudad: '', pelicula: null });
       setErrores([]);

@@ -3,12 +3,12 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 function EntradasTable({ entradas, filtroPeliculas }) {
-  // Filtrar entradas según película
+
   const entradasFiltradas = filtroPeliculas 
     ? entradas.filter(e => e.pelicula === filtroPeliculas)
     : entradas;
 
-  // Renderiza el valor total
+
   const valorTemplate = (rowData) => rowData.cantidad * 5000;
 
   return (
