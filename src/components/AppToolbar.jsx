@@ -6,8 +6,8 @@ function AppToolbar() {
     return (
         <div className="row">
             <Toolbar 
-                start={<i className="pi pi-ticket" style={{ fontSize: '2rem', color: '#2196f3' }}></i>}
-                end={<h3>Sansamark</h3>}
+                start={<h3>Sansamark</h3>}
+                end={<i className="pi pi-ticket" style={{ fontSize: '2rem', color: '#2196f3' }}></i>}
             >
             </Toolbar>
         </div>

@@ -4,9 +4,10 @@ import { Column } from 'primereact/column';
 
 function EntradasTable({ entradas, filtroPeliculas }) {
 
-  const entradasFiltradas = filtroPeliculas 
-    ? entradas.filter(e => e.pelicula === filtroPeliculas)
-    : entradas;
+  const entradasFiltradas = filtroPeliculas == null
+  ? entradas
+  : entradas.filter(e => e.pelicula === filtroPeliculas);
+
 
 
   const valorTemplate = (rowData) => rowData.cantidad * 5000;
@@ -24,5 +25,6 @@ function EntradasTable({ entradas, filtroPeliculas }) {
     </div>
   );
 }
+
 
 export default EntradasTable;
